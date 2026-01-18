@@ -1,6 +1,8 @@
 # csv is a built-in Python module
 # It helps you read from and write to CSV files
 # CSV = Comma Separated Values
+# Student Management System - Local Git Setup
+
 import csv
 from student import Student
 
