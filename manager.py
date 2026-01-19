@@ -54,6 +54,18 @@ class StudentManager:
             ) 
 
 
+    def search_student(self,student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                print(
+                f" ID: {student.student_id}, Name: {student.name}, Age: { student.age}, Course: {student.course}"
+
+            )
+                return
+        print("Student not found.")    
+
+
+
     def delete_student(self,student_id):
         for student in self.students:
             if(student.student_id == student_id):

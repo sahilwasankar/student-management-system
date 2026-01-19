@@ -9,8 +9,9 @@ from manager import StudentManager
 def show_menu():
     print("\n1. Add Student")
     print("2. View Students")
-    print("3. Delete Student")
-    print("4. Exit")
+    print("3. Search Student")
+    print("4. Delete Student")
+    print("5. Exit")
 
 manager = StudentManager()
 
@@ -31,11 +32,16 @@ while True:
     elif choice == "2":
         manager.view_students()
 
+
     elif choice == "3":
+         sid = input("Enter Student ID to search: ")
+         manager.search_student(sid)
+
+    elif choice == "4":
         sid = input("Enter Student ID to delete: ")
         manager.delete_student(sid)    
 
-    elif choice == "4":
+    elif choice == "5":
         print("Goodbye 👋")
         break
 
