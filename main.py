@@ -7,11 +7,13 @@ from student import Student
 from manager import StudentManager
 
 def show_menu():
-    print("\n1. Add Student")
-    print("2. View Students")
+    print("\n====== STUDENT MANAGEMENT SYSTEM ====== ")
+    print("1. Add Student")
+    print("2. View All Students")
     print("3. Search Student")
     print("4. Delete Student")
     print("5. Exit")
+    print("=======================================")
 
 manager = StudentManager()
 
