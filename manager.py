@@ -77,9 +77,20 @@ class StudentManager:
     def delete_student(self,student_id):
         for student in self.students:
             if(student.student_id == student_id):
-                self.students.remove(student)
-                self.save_students()
-                print("Student deleted successfully")
+                print("\nStudent Found:")
+                print(
+                f" ID: {student.student_id}\n Name: {student.name}\n Age: { student.age}\n Course: {student.course}"
+            )
+                confirm = input("Are you sure you want to delete this student? (yes/no): ").lower()
+
+                if confirm == "yes":
+
+                  self.students.remove(student)
+                  self.save_students()
+                  print("Student deleted successfully")
+                else:
+                    print("Delete operation cancelled.")  
+
                 return
         print("Student ID not found.")
 
