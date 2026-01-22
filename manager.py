@@ -50,11 +50,11 @@ class StudentManager:
         
         self.students.append(student)
         self.save_students()
-        print("Student added successfully.")
+        print("Student added successfully ✅")
 
     def view_students(self):
         if not self.students:
-            print("No students found.")
+            print("No students found ❌")
             return
         for student in self.students:
             print(
@@ -70,7 +70,7 @@ class StudentManager:
 
             )
                 return
-        print("Student not found.")    
+        print("Student not found ❌")    
 
 
 
@@ -87,11 +87,11 @@ class StudentManager:
 
                   self.students.remove(student)
                   self.save_students()
-                  print("Student deleted successfully")
+                  print("Student deleted successfully 🗑️")
                 else:
                     print("Delete operation cancelled.")  
 
                 return
-        print("Student ID not found.")
+        print("Student ID not found ❌")
 
         
