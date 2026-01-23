@@ -2,7 +2,7 @@ import os
 import csv
 from student import Student
 
-
+# Handles all the student related operations using CSV storage
 class StudentManager:
     def __init__(self, filename="data/students.csv"):
         self.filename = filename
@@ -15,7 +15,7 @@ class StudentManager:
             
             
         self.load_students()
-
+    # Loads existing student records into the self.students list
     def load_students(self):
         try:
             with open(self.filename, "r", newline="") as file:
@@ -29,20 +29,23 @@ class StudentManager:
                     )
                     self.students.append(student)
         except FileNotFoundError:
-            pass  # File will be created on first save
+            pass  
 
+    # Writes student records to the CSV file in row format
     def save_students(self):
         with open(self.filename, "w", newline="") as file:
             writer = csv.writer(file)
             for student in self.students:
                 writer.writerow(student.to_csv_row())
 
+    # Checks Whether the student ID already exists
     def student_exists(self,student_id):
         for student in self.students:
             if student.student_id == student_id:
                 return True
         return False 
     
+    # Adds a new student to the system during program execution
     def add_student(self, student):
         if self.student_exists(student.student_id):
             print("Student ID already exists. Use a unique ID.")
@@ -52,6 +55,7 @@ class StudentManager:
         self.save_students()
         print("Student added successfully ✅")
 
+    # Displays all student records present in the CSV file
     def view_students(self):
         if not self.students:
             print("No students found ❌")
@@ -61,7 +65,7 @@ class StudentManager:
               f" ID: {student.student_id}, Name: {student.name}, Age: { student.age}, Course: {student.course}"
             ) 
 
-
+    # Searches for a student by student ID
     def search_student(self,student_id):
         for student in self.students:
             if student.student_id == student_id:
@@ -73,7 +77,7 @@ class StudentManager:
         print("Student not found ❌")    
 
 
-
+    # Deletes a student record using the student ID
     def delete_student(self,student_id):
         for student in self.students:
             if(student.student_id == student_id):
