@@ -81,7 +81,6 @@ python main.py
 - Using Git for version control
 
 ---
----
 
 ## Project Evolution
 
