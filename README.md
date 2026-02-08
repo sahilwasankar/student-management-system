@@ -66,10 +66,8 @@ student-management-system/
 1. Clone the repository
 2. Navigate to the project folder
 3. Run the program:
-```bash
-python main.py
-
-
+    ```bash
+   python main.py
 
 ---
 
@@ -95,7 +93,6 @@ python main.py
 - Safe handling of empty files
 - Improved user experience
 - Tested for edge cases without crashes
-
 
 ---
 
